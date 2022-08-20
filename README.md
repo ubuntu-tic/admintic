@@ -1,3 +1,5 @@
 # admintic
 Yolanda
-Cambio johnL
+Cambio johnL v3
+Juanse Galeano 
+Jorge Vesga
