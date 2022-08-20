@@ -2,7 +2,8 @@ public class Tareas {
 
     public static void main (String args[]){
 
-        System.out.println("MI nombre es Juan Sebastian Galeano Saenz 1");
+        System.out.println("Prueba numero 2 actualizar archivos");
+        System.out.println("cambio John Lemus v1");
 
     }
 }
