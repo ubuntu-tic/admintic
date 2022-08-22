@@ -3,12 +3,18 @@ package org.example;
 import java.util.Date;
 
 public class MovimientoDinero {
-    long id;
-    String concept;
-    float amount;
-    Date updatedAt;
-    Date createdAt;
 
+    //Attribute
+    private long id;
+    private String concept;
+    private float amount;
+    private Date updatedAt;
+    private Date createdAt;
+
+    //Builder
+
+
+    //Getters and Setters
     public long getId() {
         return id;
     }
@@ -47,19 +53,5 @@ public class MovimientoDinero {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public void agregarIngreso (long idEmpresa, float montoIngreso){
-        System.out.println(idEmpresa);
-        System.out.println(montoIngreso);
-    }
-
-    public void agregarEgreso (long idEmpresa, float montoEgreso){
-        System.out.println(idEmpresa);
-        System.out.println(montoEgreso);
-    }
-
-    public void verMovimiento (long idEmpresa){
-        System.out.println(idEmpresa);
     }
 }

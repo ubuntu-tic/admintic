@@ -3,13 +3,28 @@ package org.example;
 import java.util.Date;
 
 public class Empleado {
-    long id;
-    String email;
-    String profile;
-    String role;
-    long enterprise;
-    Date updatedAt;
-    Date createdAt;
+
+    //Atribute
+    private long id;
+    private String email;
+    private String profile;
+    private String role;
+    private long enterprise;
+    private Date updatedAt;
+    private Date createdAt;
+
+    //Builder
+    public Empleado(long id, String email, String profile, String role, long enterprise, Date updatedAt, Date createdAt) {
+        this.id = id;
+        this.email = email;
+        this.profile = profile;
+        this.role = role;
+        this.enterprise = enterprise;
+        this.updatedAt = updatedAt;
+        this.createdAt = createdAt;
+    }
+
+    //Getters and Setters
 
     public long getId() {
         return id;
@@ -65,9 +80,5 @@ public class Empleado {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public void agregarEmpleado (String nombreEmpleado, String correoEmpleado, String rolEmpleado, long idEmpresa){
-        System.out.println(nombreEmpleado);
     }
 }

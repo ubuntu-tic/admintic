@@ -3,15 +3,20 @@ package org.example;
 import java.util.Date;
 
 public class Empresa {
-    long id;
-    String name;
-    String document;
-    String phone;
-    String adress;
-    Date updatedAt;
-    Date createdAt;
+
+    //Attribute
+    private long id;
+    private String name;
+    private String document;
+    private String phone;
+    private String adress;
+    private Date updatedAt;
+    private Date createdAt;
+
+    //Builder
 
 
+    //Getters and Setters
     public long getId() {
         return id;
     }
