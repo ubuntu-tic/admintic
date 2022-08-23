@@ -12,9 +12,16 @@ public class MovimientoDinero {
     private Date createdAt;
 
     //Builder
-
+    public MovimientoDinero(long id, String concept, float amount, Date updatedAt, Date createdAt) {
+        this.id = id;
+        this.concept = concept;
+        this.amount = amount;
+        this.updatedAt = updatedAt;
+        this.createdAt = createdAt;
+    }
 
     //Getters and Setters
+
     public long getId() {
         return id;
     }
