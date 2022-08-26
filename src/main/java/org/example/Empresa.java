@@ -9,11 +9,21 @@ public class Empresa {
     private String name;
     private String document;
     private String phone;
-    private String adress;
+    private String address;
     private Date updatedAt;
     private Date createdAt;
 
     //Builder
+
+    public Empresa(long id, String name, String phone, String address, Date updatedAt, Date createdAt) {
+        this.id = id;
+        this.name = name;
+        this.document = document;
+        this.phone = phone;
+        this.address = address;
+        this.updatedAt = updatedAt;
+        this.createdAt = createdAt;
+    }
 
 
     //Getters and Setters
@@ -49,12 +59,12 @@ public class Empresa {
         this.phone = phone;
     }
 
-    public java.lang.String getAdress() {
-        return adress;
+    public java.lang.String getAddress() {
+        return address;
     }
 
-    public void setAdress(java.lang.String adress) {
-        this.adress = adress;
+    public void setAddress(java.lang.String adress) {
+        this.address = adress;
     }
 
     public Date getUpdatedAt() {
