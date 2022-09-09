@@ -21,6 +21,10 @@ public class Employee {
     @Column(name="role")
     private Enum_RoleName role;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name="Enum_RoleName")
+    private Enum_RoleName Enum_RoleName;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Enterprise enterprise;
 
