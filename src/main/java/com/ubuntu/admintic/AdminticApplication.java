@@ -8,7 +8,6 @@ public class AdminticApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdminticApplication.class, args);
-		System.out.println("Hola");
 	}
 
 }
