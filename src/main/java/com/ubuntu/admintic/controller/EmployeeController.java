@@ -6,12 +6,15 @@ import com.ubuntu.admintic.entity.Profile;
 import com.ubuntu.admintic.services.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
+@RequestMapping("/Employee")
 public class EmployeeController {
+
 
     EmployeeService services;
 

@@ -3,11 +3,12 @@ package com.ubuntu.admintic.controller;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.ubuntu.admintic.entity.Profile;
 import com.ubuntu.admintic.services.ProfileService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class ProfileController {
 
     ProfileService services;

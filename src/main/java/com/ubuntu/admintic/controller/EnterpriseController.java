@@ -2,12 +2,13 @@ package com.ubuntu.admintic.controller;
 
 import com.ubuntu.admintic.entity.Enterprise;
 import com.ubuntu.admintic.services.EnterpriseService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class EnterpriseController {
 
     EnterpriseService services;

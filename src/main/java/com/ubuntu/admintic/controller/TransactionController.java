@@ -3,11 +3,12 @@ package com.ubuntu.admintic.controller;
 import com.ubuntu.admintic.entity.Profile;
 import com.ubuntu.admintic.entity.Transaction;
 import com.ubuntu.admintic.services.TransactionService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class TransactionController {
 
     TransactionService services;
