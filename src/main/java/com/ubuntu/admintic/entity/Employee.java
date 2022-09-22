@@ -1,106 +1,47 @@
 package com.ubuntu.admintic.entity;
 
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import java.util.Date;
 
 
 @Entity
-@Table(name = "Employee")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@Table(name="employee")
 public class Employee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private long id;
 
-    @Column(name= "email", unique = true)
+    @Column(unique = true, name= "email")
     private String email;
 
-    @OneToOne
-    @JoinColumn(name = "profile_id", updatable = false, nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "transaction")
+    private Transaction transaction;
+
+    @JoinColumn(name = "profile")
+    @OneToOne(cascade = CascadeType.ALL)
     private Profile profile;
 
-    @Column(name="role")
-    private Enum_RoleName role;
-
     @Enumerated(EnumType.STRING)
-    @Column(name="Enum_RoleName")
-    private Enum_RoleName Enum_RoleName;
+    @Column(name = "Enum_RoleName", nullable = false)
+    private Enum_RoleName Enum_RolName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Enterprise enterprise;
-
-    @Column(name="updateAt")
+    @UpdateTimestamp
+    @Column(name = "updateAt")
     private Date updateAt;
 
-    @Column(name="createdAT")
+    @CreationTimestamp
+    @Column(name = "createdAt")
     private Date createdAt;
-
-    public Employee (){
-
-    }
-
-    public Employee(long id, String email, Profile profile, Enum_RoleName role, Enterprise enterprise, Date updateAt, Date createdAt) {
-        this.id = id;
-        this.email = email;
-        //this.profile = profile;
-        this.role = role;
-        this.enterprise = enterprise;
-        this.updateAt = updateAt;
-        this.createdAt = createdAt;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Profile getProfile() {
-        return profile;
-    }
-
-    public void setProfile(Profile profile) {
-        this.profile = profile;
-    }
-
-    public Enum_RoleName getRole() {
-        return role;
-    }
-
-    public void setRole(Enum_RoleName role) {
-        this.role = role;
-    }
-
-    public Enterprise getEnterprise() {
-        return enterprise;
-    }
-
-    public void setEnterprise(Enterprise enterprise) {
-        this.enterprise = enterprise;
-    }
-
-    public Date getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(Date updateAt) {
-        this.updateAt = updateAt;
-    }
-
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
 }
