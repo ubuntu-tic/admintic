@@ -2,6 +2,8 @@ package com.ubuntu.admintic.controller;
 
 import com.ubuntu.admintic.entity.Enterprise;
 import com.ubuntu.admintic.services.EnterpriseService;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +17,13 @@ public class FrontController {
 
 //    public FrontController(EnterpriseService service) {this.service = service;}
 
+//    @GetMapping("/")
+//    public String index(){
+//        return "index";
+//    }
+
     @GetMapping("/")
-    public String index(){
+    public String index(Model model, @AuthenticationPrincipal OidcUser principal) {
         return "index";
     }
 
