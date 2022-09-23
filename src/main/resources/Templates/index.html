@@ -14,12 +14,12 @@
 <body>
 <main>
     <div class="px-4 py-5 my-5 text-center">
-        <img src="" class="d-block mx-auto mb-4" height="100" alt="Sistema Gestion de Ingresos y Egresos"/>
+        <img src="../img/transaccion.png" th:href="@{/transaccion.png}" class="d-block mx-auto mb-4" height="100" alt="Sistema Gestion de Ingresos y Egresos"/>
         <h1 class="display-5 fw-bold">Sistema Gestion de Ingresos y Egresos</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4">Gestiona las transacciones de las empresas y no pierdas el control de ellas</p>
             <div sec:authorize="!isAuthenticated()">
-                <a th:href="@{/oauth2/authorization/auth0}" class="btn bnt-primary btn-lg px-4 gap-3">ACCEDER</a>
+                <a th:href="@{/oauth2/authorization/auth0}" class="btn btn-primary btn-lg px-4 gap-3">Inicia Sesión</a>
             </div>
         </div>
     </div>
