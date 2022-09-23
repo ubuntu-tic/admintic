@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -31,18 +31,14 @@
                     <div class="col-lg-4 offset-4" >
                         <h3 class="text-center">Nuevo Usuario</h3>
 
-                        <form>
+                        <form th:action="@{/usuarios}" th:method="post">
                             <div class="mb-3">
-                                <label for="nombreUsuario" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario">
+                                <label for="emailUsuario" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailUsuario" name="emailUsuario">
                             </div>
                             <div class="mb-3">
-                                <label for="correoUsuario" class="form-label">Correo</label>
-                                <input type="email" class="form-control" id="correoUsuario" name="correoUsuario">
-                            </div>
-                            <div class="mb-3">
-                                <label for="rolUsuario" class="date">Rol</label>
-                                <input type="text" class="form-control" id="rolUsuario" name="rolUsuario">
+                                <label for="Enum_RoleNameUsuario" class="form-label">Enum_RoleName</label>
+                                <input type="text" class="form-control" id="Enum_RoleNameUsuario" name="Enum_RoleNameUsuario">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Ingresar</button>
