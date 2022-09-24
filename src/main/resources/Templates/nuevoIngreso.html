@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang=lang="es">
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -31,18 +31,14 @@
                     <div class="col-lg-4 offset-4" >
                         <h3 class="text-center">Nuevo movimiento de dinero</h3>
 
-                        <form>
+                        <form th:action="@{/transaction}" th:method="post">
                             <div class="mb-3">
                                 <label for="montoIngreso" class="form-label">Monto</label>
-                                <input type="number" class="form-control" id="montoIngreso" name="montoIngreso">
+                                <input type="number" class="form-control" id="montoIngreso" name="montoIngreso" th:field="${transaction.amount}">
                             </div>
                             <div class="mb-3">
                                 <label for="conceptoIngreso" class="form-label">Concepto</label>
-                                <input type="text" class="form-control" id="conceptoIngreso" name="conceptoIngreso">
-                            </div>
-                            <div class="mb-3">
-                                <label for="fechaIngreso" class="date">Fecha</label>
-                                <input type="Date" class="form-control" id="fechaIngreso" name="fechaIngreso">
+                                <input type="text" class="form-control" id="conceptoIngreso" name="conceptoIngreso" th:field="${transaction.concept}">
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Ingresar</button>

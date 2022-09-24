@@ -31,7 +31,7 @@ public class FrontController {
         return "index";
     }
 
-
+/*
     @GetMapping ("/ingresosEgresos")
     public String ingresosEgresos(Model model){
         model.addAttribute("transactions", transactionService.getTransactionList());
@@ -42,7 +42,7 @@ public class FrontController {
     public String nuevoIngreso(){
         return "nuevoIngreso";
     }
-
+*/
 //    @GetMapping("/usuarios")
 //    public String usuarios(){
 //        return "usuarios";

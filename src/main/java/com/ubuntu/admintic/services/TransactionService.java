@@ -13,6 +13,8 @@ public class TransactionService {
     public TransactionService(TransactionRepository repository){
         this.repository=repository;
     }
+
+
     public List<Transaction> getTransactionList(){
         return this.repository.findAll();
     }

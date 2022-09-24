@@ -25,8 +25,9 @@ public class TransactionController {
     }
 
     @PostMapping("/transaction")
-    public Transaction createTransaction(@RequestBody Transaction transaction){
-        return this.services.createTransaction(transaction);
+    public String createTransaction(@RequestBody Transaction transaction){
+        services.createTransaction(transaction);
+        return "redirect:/ingresosEgresos";
     }
 
     @GetMapping("/transaction/{id}")
@@ -61,5 +62,16 @@ public class TransactionController {
     private String editarTransaction(@PathVariable("id") Long id, Transaction transaction){
         services.crearYActualizarTransaction(transaction);
         return "redirect:/ingresosEgresos";
+    }
+
+
+    @GetMapping ("/ingresosEgresos")
+    private String ingresosEgresos(Model model){
+        model.addAttribute("transactions", services.getTransactionList());
+        return "ingresosEgresos";
+    }
+    @GetMapping("/nuevoIngreso")
+    private String nuevoIngreso(Transaction transaction){
+        return "nuevoIngreso";
     }
 }

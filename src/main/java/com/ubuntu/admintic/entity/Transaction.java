@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -29,9 +30,9 @@ public class Transaction {
 
     @CreationTimestamp
     @Column(name = "updateAt")
-    private Date updateAt;
+    private LocalDateTime updateAt;
 
     @CreationTimestamp
     @Column(name = "createdAt")
-    private Date createdAt;
+    private LocalDateTime createdAt;
 }
