@@ -1,7 +1,9 @@
 package com.ubuntu.admintic.controller;
 
 import com.ubuntu.admintic.entity.Enterprise;
+import com.ubuntu.admintic.entity.Transaction;
 import com.ubuntu.admintic.services.EnterpriseService;
+import com.ubuntu.admintic.services.TransactionService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Controller;
@@ -22,14 +24,18 @@ public class FrontController {
 //        return "index";
 //    }
 
+    TransactionService transactionService;
+
     @GetMapping("/")
     public String index(Model model, @AuthenticationPrincipal OidcUser principal) {
         return "index";
     }
 
-    @GetMapping("/ingresosEgresos")
-    public String ingresosEgresos(){
-        return "ingresosEgresos";
+
+    @GetMapping ("/ingresosEgresos")
+    public String ingresosEgresos(Model model){
+        model.addAttribute("transactions", transactionService.getTransactionList());
+        return "transactions";
     }
 
     @GetMapping("/nuevoIngreso")

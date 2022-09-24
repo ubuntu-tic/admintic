@@ -1,13 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
 </head>
 <body>
+<main class="d-flex flex-nowrap">
+    <div th:replace="capas/menu:: menu"></div>
+    <div class="container-lg align-items-center">
+        <div class="row mb-4">
+            <div class="col-lg-12 text-center" >
+                <h1 class="mt-4">Sistema de gestión de Ingresos y Gastos</h1>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-12" >
+                <div class="row mb-4">
+                    <div class="col-lg-6 offset-3" >
+                        <h5>Ingresos y egresos</h5>
+                    </div>
 
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-lg-4 offset-4" >
+                        <h3 class="text-center">Actualizar Ingreso y egreso</h3>
+
+                        <form th:action="@{/transaction/actualizar/{id} (id = ${transaction.id})}" method="post">
+                            <div class="mb-3">
+                                <label for="concepto" class="form-label">Concepto</label>
+                                <input type="text" class="form-control" id="concepto" name="concepto" th:field="${transaction.concept}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="monto" class="form-label">Monto</label>
+                                <input  type="number" class="form-control" id="monto" name="monto" th:field="${transaction.amount}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha" class="date">Fecha</label>
+                                <input  type="date" class="form-control" id="fecha" name="fecha" th:field="${transaction.updateAt}">
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" value="Actualizar Transacion">Actualizar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
