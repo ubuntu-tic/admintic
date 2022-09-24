@@ -1,29 +1,55 @@
 <!doctype html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <title>Document</title>
     <link rel="stylesheet" href="../static/style.css" th:href="@{/style.css}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-    <title>Index</title>
 </head>
 <body>
-<main>
-    <div class="px-4 py-5 my-5 text-center">
-        <img src="" class="d-block mx-auto mb-4" height="100" alt="Sistema Gestion de Ingresos y Egresos"/>
-        <h1 class="display-5 fw-bold">Sistema Gestion de Ingresos y Egresos</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Gestiona las transacciones de las empresas y no pierdas el control de ellas</p>
-            <div sec:authorize="!isAuthenticated()">
-                <a th:href="@{/oauth2/authorization/auth0}" class="btn bnt-primary btn-lg px-4 gap-3">ACCEDER</a>
+    <main class="d-flex flex-nowrap">
+        <div th:replace="capas/menu:: menu"></div>
+        <div class="container-lg d-flex align-items-center">
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-stretch" >
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <a href="ingresosEgresos" class="text-black">
+                                <h1 class="card-title text-center ">Sistema de gestión de ingresos y egresos</h1>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 d-flex align-items-stretch" >
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <a href="usuarios" class="text-black">
+                                <h1 class="card-title text-center">Sistema de gestión de ususarios</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 d-flex align-items-stretch" >
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <a href="empresas" class="text-black">
+                                <h1 class="card-title text-center">Sistema de gestión de empresas</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>

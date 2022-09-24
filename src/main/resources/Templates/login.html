@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../static/stylos.css">
+</head>
+<body>
+
+
+
+<div class="container">
+  
+  <form class="modal-content animate" action="#" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="../img/avatar.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+	<h2>Ingresa a Tu Cuenta</h2>
+      <label for="uname"><b>Usuario</b></label>
+      <input type="text" placeholder="Ingresar Usuario" name="username" required>
+
+      <label for="psw"><b>Contraseña</b></label>
+      <input type="password" placeholder="Ingresa tu Contraseña" name="password" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Recordarme
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      
+      <button type="button" onclick="location.href='nuevoUsuario.html'">Registrarse</button>
+      <span class="psw"><a href="#"> Olvidé Contraseña</a></span>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
