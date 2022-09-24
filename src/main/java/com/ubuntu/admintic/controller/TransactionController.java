@@ -19,30 +19,24 @@ public class TransactionController {
         this.services=services;
     }
 
-    @GetMapping("/transaction")
-    public List<Transaction> TransactionList(){
-        return this.services.getTransactionList();
+   //desde aqui
+
+    @GetMapping ("/ingresosEgresos")
+    private String ingresosEgresos(Model model){
+        model.addAttribute("transactions", services.getTransactionList());
+        return "ingresosEgresos";
+
+    }
+
+    @GetMapping("/nuevoIngreso")
+    private String nuevoIngreso(Transaction transaction){
+        return "nuevoIngreso";
     }
 
     @PostMapping("/transaction")
-    public String createTransaction(@RequestBody Transaction transaction){
+    public String createTransaction(Transaction transaction){
         services.createTransaction(transaction);
         return "redirect:/ingresosEgresos";
-    }
-
-    @GetMapping("/transaction/{id}")
-    public String findTransaction(@PathVariable int id){
-        return "";
-    }
-
-    @DeleteMapping("/transaction/{id}")
-    public String deleteTransaction(@PathVariable int id){
-        return "";
-    }
-
-    @PatchMapping("/transaction/{id}")
-    public String updateTransaction(@PathVariable int id){
-        return "";
     }
 
     @GetMapping("/transaction/borrar/{id}")
@@ -55,7 +49,7 @@ public class TransactionController {
     private String verTransactionPorId(@PathVariable("id") Long id, Model model){
         Transaction transaction = services.verTransactionPorId(id);
         model.addAttribute("transaction", transaction);
-        return "ActualizarTransaction";
+        return "actualizarIngresosEgresos";
     }
 
     @PostMapping("/transaction/actualizar/{id}")
@@ -64,14 +58,5 @@ public class TransactionController {
         return "redirect:/ingresosEgresos";
     }
 
-
-    @GetMapping ("/ingresosEgresos")
-    private String ingresosEgresos(Model model){
-        model.addAttribute("transactions", services.getTransactionList());
-        return "ingresosEgresos";
-    }
-    @GetMapping("/nuevoIngreso")
-    private String nuevoIngreso(Transaction transaction){
-        return "nuevoIngreso";
-    }
 }
+
