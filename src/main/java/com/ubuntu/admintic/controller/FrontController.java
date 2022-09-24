@@ -37,15 +37,15 @@ public class FrontController {
         return "nuevoIngreso";
     }
 
-    @GetMapping("/usuarios")
-    public String usuarios(){
-        return "usuarios";
-    }
-
-    @GetMapping("/nuevoUsuario")
-    public String nuevoUsuario(){
-        return "nuevoUsuario";
-    }
+//    @GetMapping("/usuarios")
+//    public String usuarios(){
+//        return "usuarios";
+//    }
+//
+//    @GetMapping("/nuevoUsuario")
+//    public String nuevoUsuario(){
+//        return "nuevoUsuario";
+//    }
 //
 //    @GetMapping("/empresas")
 //    public String empresas(Model model){

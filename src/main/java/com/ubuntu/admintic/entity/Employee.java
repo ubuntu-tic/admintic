@@ -34,7 +34,7 @@ public class Employee {
     private Profile profile;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "Enum_RoleName", nullable = false)
+    @Column(name = "Enum_RoleName")
     private Enum_RoleName Enum_RolName;
 
     @UpdateTimestamp

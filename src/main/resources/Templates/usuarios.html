@@ -32,7 +32,7 @@
                     <thead>
                     <tr>
                         <th scope="col">email</th>
-                        <th scope="col">Enum_RoleName</th>
+
                         <th scope="col">updateAt</th>
                         <th scope="col">createdAt</th>
                         <th scope="col">Editar</th>
@@ -42,7 +42,7 @@
 
                     <tr th:each="employee: ${employees}">
                         <td th:text="${employee.email}"></td>
-                        <td th:text="${employee.Enum_RoleName}"></td>
+
                         <td th:text="${employee.updateAt}"></td>
                         <td th:text="${employee.createdAt}"></td>
                         <td><a th:href="@{/usuarios/editar/{id} (id = ${employee.id})}">✍</a></td>

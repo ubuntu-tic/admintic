@@ -27,9 +27,9 @@ public class Profile {
     @Column(name= "phone")
     private String phone;
 
-    @JoinColumn(name = "employee")
-    @OneToOne
-    private Employee employee;
+//    @JoinColumn(name = "employee")
+//    @OneToOne
+//    private Employee employee;
 
     @UpdateTimestamp
     @Column(name = "updateAt")
