@@ -35,13 +35,15 @@
                         <th scope="col">Monto</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Usuario</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Borrar</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="transaction : ${transactions}">
                         <td th:text="${transaction.concept}"></td>
-                        <td th:text="${transaction.amount}"></td>
-                        <td th:text="${transaction.createdAt}"></td>
+                        <td class="monto" th:text="${transaction.amount}"></td>
+                        <td th:text="${transaction.updateAt}"></td>
                         <td></td>
                         <td><a th:href="@{/transaction/editar/{id} (id = ${transaction.id})}">✍</a></td>
                         <td><a th:href="@{/transaction/borrar/{id} (id = ${transaction.id})}">🗑️</a></td>
@@ -50,6 +52,11 @@
 
                     </tbody>
                 </table>
+                <div class="row">
+                    <div class="offset-9 col-3">
+                        <div id="total" class="text-end" style="background-color:#CCCCCC;padding:10px">Total: XXXX.XX</div>
+                    </div>
+                </div>
             </div>
 
 
@@ -61,3 +68,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+    const highlightedItems = document.querySelectorAll(".monto");
+    let total = 0;
+    highlightedItems.forEach((userItem) => {
+      total += parseFloat(userItem.innerHTML);
+    });
+    document.getElementById("total").innerHTML = "TOTAL: "+total
+</script>

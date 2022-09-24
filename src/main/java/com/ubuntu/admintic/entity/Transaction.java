@@ -2,6 +2,7 @@ package com.ubuntu.admintic.entity;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -28,7 +29,7 @@ public class Transaction {
     @Column(name= "amount")
     private float amount;
 
-    @CreationTimestamp
+    @UpdateTimestamp
     @Column(name = "updateAt")
     private LocalDateTime updateAt;
 

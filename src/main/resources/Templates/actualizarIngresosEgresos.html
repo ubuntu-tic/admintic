@@ -32,18 +32,16 @@
                         <h3 class="text-center">Actualizar Ingreso y egreso</h3>
 
                         <form th:action="@{/transaction/actualizar/{id} (id = ${transaction.id})}" method="post">
-                            <div class="mb-3">
-                                <label for="concepto" class="form-label">Concepto</label>
-                                <input type="text" class="form-control" id="concepto" name="concepto" th:field="${transaction.concept}">
-                            </div>
+
                             <div class="mb-3">
                                 <label for="montoIngreso" class="form-label">Monto</label>
                                 <input type="number" class="form-control" id="montoIngreso" name="montoIngreso" th:field="${transaction.amount}">
                             </div>
                             <div class="mb-3">
-                                <label for="fecha" class="date">Fecha</label>
-                                <input  type="date" class="form-control" id="fecha" name="fecha" th:field="${transaction.updateAt}">
+                                <label for="concepto" class="form-label">Concepto</label>
+                                <input type="text" class="form-control" id="concepto" name="concepto" th:field="${transaction.concept}">
                             </div>
+
 
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary" value="Actualizar Transacion">Actualizar</button>
