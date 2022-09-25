@@ -3,19 +3,24 @@ package com.ubuntu.admintic.controller;
 
 import com.ubuntu.admintic.entity.Employee;
 import com.ubuntu.admintic.entity.Enterprise;
+import com.ubuntu.admintic.repositories.EmployeeRepository;
+import com.ubuntu.admintic.repositories.EnterpriseRepository;
 import com.ubuntu.admintic.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @Controller
 public class EmployeeController {
 
     @Autowired
-    EmployeeService services;
+    private EmployeeService services;
+
+
 
     @GetMapping ("/usuarios")
     private String verUsuario(Model model){
@@ -23,10 +28,12 @@ public class EmployeeController {
         return "usuarios";
     }
 
+
     @GetMapping("/nuevoUsuario")
     private String verFormNuevoUsuario(Employee employee){
         return "nuevoUsuario";
     }
+
 
     @PostMapping("usuarios")
     private String crearUsuario(Employee employee){

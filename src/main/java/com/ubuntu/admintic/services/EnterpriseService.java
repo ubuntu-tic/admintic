@@ -4,6 +4,7 @@ import com.ubuntu.admintic.entity.Enterprise;
 import com.ubuntu.admintic.repositories.EnterpriseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,9 +20,19 @@ public class EnterpriseService {
     //    public EnterpriseService(EnterpriseRepository repository){
 //        this.repository=repository;
 //    }
+
     public List<Enterprise> verEmpresa(){
         return this.repository.findAll();
     }
+
+//    public String listarEmpresas(Model model){
+//        List<Enterprise> listarEmpresas = repository.findAll();
+//        model.addAttribute("listarEmpresas", listarEmpresas);
+//        return "empresas";
+//    }
+
+
+
 
 //    public Enterprise createEnterprise(Enterprise newEnterprise){
 //        return this.repository.save(newEnterprise);

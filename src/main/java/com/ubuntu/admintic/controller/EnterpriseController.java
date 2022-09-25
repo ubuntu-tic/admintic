@@ -1,6 +1,7 @@
 package com.ubuntu.admintic.controller;
 
 import com.ubuntu.admintic.entity.Enterprise;
+import com.ubuntu.admintic.repositories.EnterpriseRepository;
 import com.ubuntu.admintic.services.EnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,8 @@ import java.util.Optional;
 public class EnterpriseController {
 
     @Autowired
-    EnterpriseService services;
+    private EnterpriseService services;
+
 
 
     @GetMapping ("/empresas")

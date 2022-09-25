@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Entity
@@ -19,12 +20,12 @@ public class Enterprise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
-    private long id;
+    public long id;
 
-    @Column(unique = true, name = "name")
+    @Column(unique = true, name = "name", nullable = false)
     private String name;
 
-    @Column(unique = true, name = "document")
+    @Column(unique = true, name = "document", nullable = false)
     private String document;
 
     @Column(name = "phone")
@@ -33,20 +34,16 @@ public class Enterprise {
     @Column(name = "address")
     private String address;
 
-    @JoinColumn(name = "employee")
-    @ManyToOne
-    private Employee employee;
-
     @JoinColumn(name = "transaction")
     @ManyToOne
     private Transaction transaction;
 
     @UpdateTimestamp
     @Column(name = "updateAt")
-    private LocalDateTime updateAt;
+    private Date updateAt;
 
     @CreationTimestamp
     @Column(name = "createdAt")
-    private LocalDateTime createdAt;
+    private Date createdAt;
 
 }

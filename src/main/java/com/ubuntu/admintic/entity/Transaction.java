@@ -21,7 +21,7 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private long id;
+    public long id;
 
     @Column(name= "concept")
     private String concept;
@@ -31,9 +31,9 @@ public class Transaction {
 
     @UpdateTimestamp
     @Column(name = "updateAt")
-    private LocalDateTime updateAt;
+    private Date updateAt;
 
     @CreationTimestamp
     @Column(name = "createdAt")
-    private LocalDateTime createdAt;
+    private Date createdAt;
 }

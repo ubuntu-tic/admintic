@@ -20,10 +20,14 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private long id;
+    public long id;
 
     @Column(unique = true, name= "email")
     private String email;
+
+    @JoinColumn(name = "enterpise")
+    @ManyToOne
+    private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "transaction")

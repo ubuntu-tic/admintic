@@ -19,7 +19,7 @@ public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private long id;
+    public long id;
 
     @Column(name= "image")
     private String image;
