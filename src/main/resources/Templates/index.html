@@ -22,7 +22,7 @@
                 <a th:href="@{/oauth2/authorization/auth0}" class="btn btn-primary btn-lg px-4 gap-3">Inicia Sesión</a>
             </div>
             <div sec:authorize="isAuthenticated()">
-                <!--<h3 th:text="'Bienvenido ' + ${employee.getEmail()}"></h3>-->
+                <h3 th:text="'Bienvenido ' + ${user.get('email')}"></h3>
                 <a th:href="@{/ingresosEgresos}" class="btn btn-primary btn-lg px-4 gap-3">Ir a la aplicación</a>
             </div>
         </div>
