@@ -23,7 +23,13 @@ public class TransactionController {
 
     @GetMapping ("/ingresosEgresos")
     private String ingresosEgresos(Model model){
+        List<Transaction> prueba = services.getTransactionList();
+        int suma = 0;
+        for (int i=0;i<prueba.size();i++) {
+            suma += prueba.get(i).getAmount();
+        }
         model.addAttribute("transactions", services.getTransactionList());
+        model.addAttribute("suma",suma);
         return "ingresosEgresos";
 
     }
