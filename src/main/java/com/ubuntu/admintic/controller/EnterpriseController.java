@@ -19,13 +19,13 @@ public class EnterpriseController {
 
 
 
-    @GetMapping ("/empresas")
+    @GetMapping ("empresas")
     private String verEmpresa(Model model){
         model.addAttribute("enterprises", services.verEmpresa());
         return "empresas";
     }
 
-    @GetMapping("/nuevaEmpresa")
+    @GetMapping("nuevaEmpresa")
     private String verFormNuevaEmpresa(Enterprise enterprise){
         return "nuevaEmpresa";
     }
@@ -36,7 +36,7 @@ public class EnterpriseController {
         return "redirect:/empresas";
     }
 
-    @GetMapping("/empresas/borrar/{id}")
+    @GetMapping("empresas/borrar/{id}")
     private String eliminarEmpresa(@PathVariable("id") Long id){
         services.eliminarEmpresa(id);
         return "redirect:/empresas";

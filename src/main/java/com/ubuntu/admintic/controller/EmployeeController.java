@@ -22,14 +22,14 @@ public class EmployeeController {
 
 
 
-    @GetMapping ("/usuarios")
+    @GetMapping ("usuarios")
     private String verUsuario(Model model){
         model.addAttribute("employees", services.verUsuario());
         return "usuarios";
     }
 
 
-    @GetMapping("/nuevoUsuario")
+    @GetMapping("nuevoUsuario")
     private String verFormNuevoUsuario(Employee employee){
         return "nuevoUsuario";
     }
@@ -41,7 +41,7 @@ public class EmployeeController {
         return "redirect:/usuarios";
     }
 
-    @GetMapping("/usuarios/borrar/{id}")
+    @GetMapping("usuarios/borrar/{id}")
     private String eliminarUsuario(@PathVariable("id") Long id){
         services.eliminarUsuario(id);
         return "redirect:/usuarios";

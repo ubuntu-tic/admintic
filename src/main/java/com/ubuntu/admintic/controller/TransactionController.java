@@ -21,7 +21,7 @@ public class TransactionController {
 
    //desde aqui
 
-    @GetMapping ("/ingresosEgresos")
+    @GetMapping ("ingresosEgresos")
     private String ingresosEgresos(Model model){
         List<Transaction> prueba = services.getTransactionList();
         int suma = 0;
@@ -34,31 +34,31 @@ public class TransactionController {
 
     }
 
-    @GetMapping("/nuevoIngreso")
+    @GetMapping("nuevoIngreso")
     private String nuevoIngreso(Transaction transaction){
         return "nuevoIngreso";
     }
 
-    @PostMapping("/transaction")
+    @PostMapping("transaction")
     public String createTransaction(Transaction transaction){
         services.createTransaction(transaction);
         return "redirect:/ingresosEgresos";
     }
 
-    @GetMapping("/transaction/borrar/{id}")
+    @GetMapping("transaction/borrar/{id}")
     private String eliminarTransaccion(@PathVariable("id") Long id){
         services.eliminarTransaction(id);
         return "redirect:/ingresosEgresos";
     }
 
-    @GetMapping("/transaction/editar/{id}")
+    @GetMapping("transaction/editar/{id}")
     private String verTransactionPorId(@PathVariable("id") Long id, Model model){
         Transaction transaction = services.verTransactionPorId(id);
         model.addAttribute("transaction", transaction);
         return "actualizarIngresosEgresos";
     }
 
-    @PostMapping("/transaction/actualizar/{id}")
+    @PostMapping("transaction/actualizar/{id}")
     private String editarTransaction(@PathVariable("id") Long id, Transaction transaction){
         services.crearYActualizarTransaction(transaction);
         return "redirect:/ingresosEgresos";
