@@ -1,0 +1,35 @@
+<div th:fragment="menu" xmlns:th="http://www.w3.org/1999/xhtml" class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px; background-color:#25316D !important">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">AdminTic</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a th:class="${#httpServletRequest.requestURI == '/ingresosEgresos'} ? 'active nav-link' : 'nav-link'" th:href="@{/ingresosEgresos}">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                Transacciones
+            </a>
+        </li>
+        <li>
+            <a th:class="${#httpServletRequest.requestURI == '/usuarios'} ? 'active nav-link' : 'nav-link'" th:href="@{/usuarios}">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+                Usuarios
+            </a>
+        </li>
+        <li>
+            <a th:class="${#httpServletRequest.requestURI == '/empresas'} ? 'active nav-link' : 'nav-link'" th:href="@{/empresas}">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+                Empresas
+            </a>
+        </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+        <a href="/" class="d-flex align-items-center text-white text-decoration-none">
+            ❌
+            <div class="ms-1"><strong>Salir</strong></div>
+
+        </a>
+    </div>
+</div>
